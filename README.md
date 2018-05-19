@@ -23,7 +23,6 @@ meteor test --driver-package cultofcoders:mocha --port XXXX
 ## Authors 
 **Camilo A Carrillo N** 😬🤖👺
 **Andres F Vera H** 🤨🤑👌🏻
-# Beta
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
