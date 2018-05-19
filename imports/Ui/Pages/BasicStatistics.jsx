@@ -10,6 +10,7 @@ import TwitterView from './TwitterView';
 class BasicStatistics extends Component {
 
     render() {
+        let searchReports = this.props.SearchReports;
         let lastReports = this.props.LastReports;
         let reports = this.props.Reports;
         let TweetReports = this.props.TweetReports;
@@ -28,6 +29,9 @@ class BasicStatistics extends Component {
                     <li className="nav-item">
                         <a className="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Denuncias Tuiteadas</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" id="pills-res-tab" data-toggle="pill" href="#pills-res" role="tab" aria-controls="pills-res" aria-selected="false">Resultados</a>
+                    </li>
                 </ul>
                 <div className="tab-content" id="pills-tabContent">
                     <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -35,10 +39,15 @@ class BasicStatistics extends Component {
                         {/*<Dashboard BackHome={this.BackHome} Reports={reports} />*/}
                     </div>
                     <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <p>Aquí se pueden ver los ultimos 10 reportes recibidos en la pagina.</p>
                         <ReportsView LastReports={lastReports} OpenReport={(rI) => this.props.OpenReport(rI)} Reports={reports} />
                     </div>
                     <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <p>Aquí se pueden ver los ultimos 10 reportes recibidos por Twitter.</p>
                         <TwitterView isAdmin={this.props.isAdmin} TweetReports={TweetReports} />
+                    </div>
+                    <div className="tab-pane fade" id="pills-res" role="tabpanel" aria-labelledby="pills-res-tab">
+                        <ReportsView LastReports={searchReports} OpenReport={(rI) => this.props.OpenReport(rI)} Reports={reports} />
                     </div>
                 </div>
             </div>
@@ -57,6 +66,7 @@ class BasicStatistics extends Component {
 }
 
 BasicStatistics.propTypes = {
+    SearchReports: PropTypes.array.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     LastReports: PropTypes.array.isRequired,
     OpenReport: PropTypes.func.isRequired,

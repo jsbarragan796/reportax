@@ -32,7 +32,7 @@ if (Meteor.isServer) {
             //console.log("GetTweets | Data: ", params, consumerKey, consumerSecret, accessTokenKey, accessTokenSecret);
             return client.get("search/tweets", params);
         },
-        "Twitter.addTweetReport"(id, CreationDate, City, Placa, Empresa, Denuncia, Images, idDepartamento, userName, screenName) {
+        "Twitter.addTweetReport"(id, CreationDate, City, Placa, Empresa, Denuncia, Images, idDepartamento, nombreDepartamento, userName, screenName) {
             check(City, String);
             check(Placa, String);
             check(Denuncia, String);
@@ -41,8 +41,8 @@ if (Meteor.isServer) {
             let userId = Meteor.user()._id;
             //let userName = Meteor.user().username;
 
-            console.log("AddTweetReport | ", userId, userName, id, CreationDate, City, Empresa, Placa, Denuncia, Images, idDepartamento, userName, screenName);
-            
+            console.log("AddTweetReport | ", userId, userName, id, CreationDate, City, Empresa, Placa, Denuncia, Images, idDepartamento, nombreDepartamento, userName, screenName);
+
             TweetsReports.insert({
                 _id: id,
                 userId,
@@ -51,6 +51,7 @@ if (Meteor.isServer) {
                 CreationDate,
                 City,
                 idDepartamento,
+                nombreDepartamento,
                 Placa,
                 Denuncia,
                 Images

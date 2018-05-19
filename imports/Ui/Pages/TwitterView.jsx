@@ -19,7 +19,7 @@ class TwitterView extends Component {
 
     getMeteorData() {
         let tweets = this.props.TweetReports;
-        console.log("TwitterView | getMeteorData ", tweets);
+        //console.log("TwitterView | getMeteorData ", tweets);
 
         return {
             Departamentos: [],
@@ -46,7 +46,7 @@ class TwitterView extends Component {
     }
 
     HandleMapSelection(select) {
-        console.log("HandleMapSelection | ", select);
+        //console.log("HandleMapSelection | ", select);
         let res = [];
         let tweets = this.props.TweetReports;
         let depts = this.state.Departamentos;
@@ -74,7 +74,7 @@ class TwitterView extends Component {
                 });
             });
 
-            console.log("HandleMapSelection | Filtered: ", res);
+            //console.log("HandleMapSelection | Filtered: ", res);
 
             this.setState({
                 filteredTweets: res,
@@ -100,7 +100,7 @@ class TwitterView extends Component {
                 ciudades.forEach((c) => {
                     //console.log("Buscando departamento", City, c.Nombre, City == c.Nombre ? true : false);
                     if (c.Nombre == City) {
-                        console.log("Buscando departamento", City);
+                        //console.log("Buscando departamento", City);
                         res = d;
                     }
                 });
@@ -113,13 +113,13 @@ class TwitterView extends Component {
     }
 
     LoadNewTweetReports() {
-        console.log("Loading new Tweets");
+        //console.log("Loading new Tweets");
 
         Meteor.call("Twitter.GetTweets", (err, res) => {
             if (err) {
                 throw err;
             } else {
-                console.log("Twitter.GetTweets | ", err, res);
+                //console.log("Twitter.GetTweets | ", err, res);
 
                 res.statuses.forEach((tw, i) => {
                     if (i == 2) {
@@ -164,18 +164,19 @@ class TwitterView extends Component {
                         } else if (htT.startsWith("Empresa")) {
                             Empresa = htT.substring(7, size);
                         }
-                    });
+                    }); 
 
                     let departamento = this.BuscarDepartamento(City);
                     let depId = departamento.id ? departamento.id : "_NO";
+                    let depNombre = departamento.departamento ? departamento.departamento : "_NO";
 
-                    console.log("Nuevo TweetReporte", departamento, depId);
+                    //console.log("Nuevo TweetReporte", departamento, depId, depNombre);
 
                     //console.log("Nuevo TweetReporte", id, CreationDate, City, Placa, Empresa, Denuncia, Images, depId);
 
-                    Meteor.call("Twitter.addTweetReport", id, CreationDate, City, Placa, Empresa, Denuncia, Images, depId, userName, screen_name, (err, res) => {
+                    Meteor.call("Twitter.addTweetReport", id, CreationDate, City, Placa, Empresa, Denuncia, Images, depId, depNombre, userName, screen_name, (err, res) => {
                         if (err) {
-                            console.log("addTweetReport | ERRO: ", err);
+                            //console.log("addTweetReport | ERRO: ", err);
                         } else {
 
                         }

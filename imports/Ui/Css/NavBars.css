@@ -32,3 +32,11 @@ h {
         width: 15vw;
     }
 }
+
+.myInputS{
+    margin-top: 10px;
+}
+
+.mySelectType{
+    height: 100%;
+}

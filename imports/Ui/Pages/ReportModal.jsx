@@ -16,7 +16,7 @@ class ReportModal extends Component {
         };
     }
 
-    CargarImagenes(Imagenes) {
+    CargarImagenes(isTwitter, Imagenes) {
         let res = <h5>No hay imagenes disponibles...</h5>
 
         //console.log("CargarImagenes :", Imagenes);
@@ -28,10 +28,11 @@ class ReportModal extends Component {
                     <div className="carousel-inner">
 
                         {Imagenes.map((d, i) => {
+                            let srcD = isTwitter ? d : d.image;
                             let active = (i == 0) ? " active" : "";
 
                             return (<div key={"Img" + i} className={"carousel-item" + active}>
-                                <img className="d-block w-100" src={d.image} alt="First slide" />
+                                <img className="d-block w-100" src={srcD} alt="First slide" />
                             </div>)
                         })}
 
@@ -55,9 +56,11 @@ class ReportModal extends Component {
 
     render() {
         let Report = this.props.Report;
+        let isTwitter = Report.screenName ? true : false;
 
         let res = <h1>Loading...</h1>;
         //console.log("Report modal | Report: ", Report);
+        let dep = isTwitter ? Report.nombreDepartamento : Report.Department;
 
         if (Report) {
             res = (
@@ -70,14 +73,14 @@ class ReportModal extends Component {
                     </div>
 
                     <div className="modal-body totalHeight">
-                        <h6>{"Departamento: " + Report.Department}</h6>
+                        <h6>{"Departamento: " + dep}</h6>
                         <h6>{"Ciudad: " + Report.City}</h6>
-                        <h6>{"Conductor: " + Report.Conductor}</h6>
+                        {isTwitter ? "" : <h6>{"Conductor: " + Report.Conductor}</h6>}
                         <h6>{"Placa del vehiculo: " + Report.Placa}</h6>
                         <hr className="my-2" />
                         <p>{Report.Denuncia}</p>
                         <hr className="my-2" />
-                        {this.CargarImagenes(Report.Images)}
+                        {this.CargarImagenes(isTwitter, Report.Images)}
                     </div>
 
                     <div className="modal-footer">

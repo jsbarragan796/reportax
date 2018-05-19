@@ -17,16 +17,16 @@ class ColombiaMap extends Component {
     }
 
     componentDidMount() {
-        console.log("Mount MAP");
+        //console.log("Mount MAP");
         this.GenerateMap();
     }
 
-    /*componentWillUpdate() {
-        console.log("Will Update MAP");
+    componentWillUpdate() {
+        /*console.log("Will Update MAP");
         var svg = d3.select(this.svg).selectAll("g").remove();
         var svg = d3.select(this.svg).selectAll("rect").remove();
-        this.GenerateMap();
-    }*/
+        this.GenerateMap();*/
+    }
 
     GenerateMap() {
         var width = this.props.width || 960,

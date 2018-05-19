@@ -33,6 +33,7 @@ class ReportsView extends Component {
 
             function loadReports() {
                 return lastReports.map((d, i) => (
+                    isTweet = (d.screenName) ? true : false,
                     active = i == 0 ? " active" : "",
                     fDate = (/^\d/.test(d.creationDate)) ? date = timeFmt(d.creationDate) : d.creationDate,
                     past = moment(fDate),
@@ -51,13 +52,32 @@ class ReportsView extends Component {
                             <small>{"" + final}</small>
                         </div>
                         <hr className="my-1" />
-                        <h6>{"Conductor: " + d.Conductor}</h6>
-                        <h6>{"Empresa: " + d.Company}</h6>
+                        {isTweet ?
+                            ""
+                            :
+                            <h6>{"Conductor: " + d.Conductor}</h6>
+                        }
+
+                        {isTweet ?
+                            ""
+                            :
+                            <h6>{"Empresa: " + d.Company}</h6>
+                        }
 
                         <div className="row">
                             <div className="col-10">
                                 <p className="mb-1">{d.Denuncia}</p>
-                                <small>{d.userName}</small>
+
+                                <hr className="my-1" />
+
+                                <h5 className="noMargin">{d.userName}</h5>
+
+                                {isTweet ?
+                                    <small>{"@" + d.screenName}</small>
+                                    :
+                                    ""
+                                }
+
                             </div>
                             <div className="col-2">
                                 <button type="button" className="btn btn-info btnVer" onClick={me.ClickReport} name={d._id} data-toggle="modal" data-target="#ReportModal">Ver</button>
@@ -81,7 +101,7 @@ class ReportsView extends Component {
         let target = e.target;
         let reportId = target.name;
 
-        console.log("Click report | data: ", target, reportId);
+        //console.log("Click report | data: ", target, reportId);
 
         if (reportId) {
             this.props.OpenReport(reportId);

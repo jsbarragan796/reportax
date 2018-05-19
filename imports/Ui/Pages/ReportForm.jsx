@@ -450,7 +450,6 @@ class ReportForm extends Component {
 
 ReportForm.propTypes = {
     BackHome: PropTypes.func.isRequired,
-    Companies: PropTypes.array.isRequired,
     CreateReport: PropTypes.func.isRequired
 }
 

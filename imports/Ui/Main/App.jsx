@@ -9,7 +9,6 @@ import "../Css/App.css";
 import Dashboard from "../Admin/Dashboard.jsx";
 
 // Data
-import { Companies } from "../../Api/Companies.js";
 import { Reports } from "../../Api/Reports.js";
 import { TweetsReports } from "../../Api/TweetsReports.js";
 
@@ -49,6 +48,7 @@ class App extends Component {
         this.state = this.getMeteorData();
 
         this.BackHome = this.BackHome.bind(this);
+        this.Buscar = this.Buscar.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleStageChange = this.handleStageChange.bind(this);
         this.Logout = this.Logout.bind(this);
@@ -61,7 +61,8 @@ class App extends Component {
             isAuthenticated: Meteor.userId() !== null,
             //stage: "CREATE_REPORT"
             actReport: {},
-            stage: "Home"
+            stage: "Home",
+            SearchReports: []
         };
     }
 
@@ -108,7 +109,62 @@ class App extends Component {
         });
     }
 
-    
+    Buscar(s, t) {
+        //console.log("App | Buscar: ", s, t);
+        let tweetReports = this.props.TweetReports;
+        let Reports = this.props.reports;
+        let res = [];
+
+        //console.log("Buscar | Datos: ", Reports, tweetReports);
+
+        Reports.forEach((e, i) => {
+            if (t == "City") {
+                if (e.City == s) {
+                    res.push(e);
+                }
+            } else if (t == "Department") {
+                if (e.Department == s) {
+                    res.push(e);
+                }
+            } else {
+                if (e.Placa == s) {
+                    res.push(e);
+                }
+            }
+        });
+
+        tweetReports.forEach((e, i) => {
+            if (t == "City") {
+                if (e.City == s) {
+                    res.push(e);
+                }
+            } else if (t == "Department") {
+                if (e.nombreDepartamento == s) {
+                    res.push(e);
+                }
+            } else {
+                if (e.Placa == s) {
+                    res.push(e);
+                }
+            }
+        });
+
+        //console.log("Buscar | Respuesta: ", res);
+
+        this.setState({
+            SearchReports: res
+        });
+        
+        $("#pills-home-tab").removeClass("active").removeClass("show");
+        $("#pills-profile-tab").removeClass("active").removeClass("show");
+        $("#pills-contact-tab").removeClass("active").removeClass("show");
+        $("#pills-res-tab").addClass("active").addClass("show");
+
+        $("#pills-home").removeClass("active").removeClass("show");
+        $("#pills-profile").removeClass("active").removeClass("show");
+        $("#pills-contact").removeClass("active").removeClass("show");
+        $("#pills-res").addClass("active").addClass("show");
+    }
 
     GetStage(user) {
         let actStage = this.state.stage;
@@ -117,11 +173,12 @@ class App extends Component {
         let TweetReports = this.props.TweetReports;
         let Reports = this.props.reports;
         let LastReports = this.props.lastReports;
+        let SearchReports = this.state.SearchReports;
 
         if (actStage === "Home") {
             return (
                 <div id="BasicInit">
-                    <UserNavBar handleStageChange={(e) => this.handleStageChange(e)} isAdmin={user.profile.isAdmin} Logout={this.Logout} UserName={this.props.user.username} />
+                    <UserNavBar Buscar={(s, t) => this.Buscar(s, t)} handleStageChange={(e) => this.handleStageChange(e)} isAdmin={user.profile.isAdmin} Logout={this.Logout} UserName={this.props.user.username} />
 
                     <div className="container navMargin">
                         <div className="row justify-content-center myBtnRow">
@@ -148,27 +205,7 @@ class App extends Component {
                         </div>
 
                         <div className="row myRow">
-
-                            {/*<BasicMenu />*/}
-                            {/*<LiveReportsList />*/}
-
-                            {/*<div id="LiveReportsList" className="col-md-6">
-                                <BasicStatistics />
-                            </div>
-
-                            <div id="MapCol" className="col-md-6">
-                                <h2>Reports Map</h2>
-                                <hr className="my-2" />
-
-                                <ColombiaMap
-                                    width="600"
-                                    height="600"
-                                    //data={{ RISARALDA: 10 }}
-                                    data={{}}
-                                ></ColombiaMap>
-            </div>*/}
-                            {/*console.log("Creando Basic Statistics: ", TweetReports)*/}
-                            {Reports && LastReports ? <BasicStatistics isAdmin={user.profile.isAdmin} LastReports={LastReports} Reports={Reports} TweetReports={TweetReports} OpenReport={(rI) => this.OpenReport(rI)} /> : <h1>Loading...</h1>}
+                            {Reports && LastReports ? <BasicStatistics SearchReports={SearchReports} isAdmin={user.profile.isAdmin} LastReports={LastReports} Reports={Reports} TweetReports={TweetReports} OpenReport={(rI) => this.OpenReport(rI)} /> : <h1>Loading...</h1>}
                         </div>
                     </div>
                 </div>
@@ -213,26 +250,41 @@ class App extends Component {
 
     OpenReport(reportId) {
         let reports = this.props.reports;
+        let TweetReports = this.props.TweetReports;
         let reportData = {};
+        let find = false;
 
-        //console.log("Reports | ", reports);
+        console.log("Reports | Buscando: ", reportId);
 
         if (reports) {
             for (let i = 0; i < reports.length; i++) {
                 let act = reports[i];
+
+                if (act._id == reportId) {
+                    console.log("Act Report | ", act, reportId);
+
+                    reportData = reports[i];
+                    find = true;
+                }
+            }
+        }
+
+        if (TweetReports && !find) {
+            for (let i = 0; i < TweetReports.length; i++) {
+                let act = TweetReports[i];
                 //console.log("Act Report | ", act, reportId);
 
                 if (act._id == reportId) {
-                    reportData = reports[i];
+                    reportData = TweetReports[i];
+                    find = true;
                 }
             }
-
-            console.log("App | OpenReport", reportData);
-
-            this.setState({
-                actReport: reportData
-            });
         }
+
+        //console.log("App | OpenReport", reportData);
+        this.setState({
+            actReport: reportData
+        });
     }
 
     CloseReport() {
@@ -243,7 +295,6 @@ class App extends Component {
 
     render() {
         //console.log("User: ", this.props.user);
-        //console.log("App | ReportsList ", this.props.reports);
 
         let user = this.props.user;
 
@@ -273,13 +324,11 @@ App.propTypes = {
 
 export default withTracker(
     () => {
-        Meteor.subscribe('Companies');
         Meteor.subscribe('Reports');
         Meteor.subscribe('TweetsReports');
         Meteor.subscribe('users');
 
         return {
-            companies: Companies.find({}).fetch(),
             reports: Reports.find({}).fetch(),
             TweetReports: TweetsReports.find(
                 {},
