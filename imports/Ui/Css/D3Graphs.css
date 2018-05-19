@@ -1,0 +1,45 @@
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.bar:hover {
+    fill: brown;
+}
+
+.x.axis path {
+    display: none;
+}
+
+#DateChart .x.axis text {
+    text-anchor: end;
+}
+
+#DateChart svg {
+    overflow: visible;
+}
+
+#CitiesChart .x.axis text {
+    text-anchor: end;
+}
+
+#CitiesChart svg {
+    overflow: visible;
+}
+
+#DepartmentsChart .x.axis text {
+    text-anchor: end;
+}
+
+#DepartmentsChart svg {
+    overflow: visible;
+}
+
+.fullSize {
+    width: 100%;
+}
+
+.spaceRow {
+    height: 60px;
+}

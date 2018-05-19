@@ -1,0 +1,84 @@
+{
+    "Bogota": {
+        "Taxis": [
+            {
+                "Nombre": "AIR Taxis S.A. Air Taxis SA",
+                "Sigla": "AIR Taxis SA"
+            },
+            {
+                "Nombre": "Alo Taxis S.A.",
+                "Sigla": "SITP"
+            },
+            {
+                "Nombre": "Asociación propietarios de Taxis Aeropuerto el Dorado-Astaxdorado",
+                "Sigla": "Astaxdorado"
+            },
+            {
+                "Nombre": "Car Taxis S.A.-car Taxis",
+                "Sigla": "Car Taxis"
+            },
+            {
+                "Nombre": "Compañia de Taxis Verdes S.A.-CIA de Taxis Verdes S.A",
+                "Sigla": "CIA de Taxis Verdes S.A. "
+            },
+            {
+                "Nombre": "Nueva empresa de Taxis S.A.S",
+                "Sigla": "NE"
+            },
+            {
+                "Nombre": "Radio Taxis Amarillos LTDA",
+                "Sigla": "Radio Taxis Amarillos LTDA"
+            },
+            {
+                "Nombre": "Sociedad de Taxistas unidos STU S.A",
+                "Sigla": "STU S.A."
+            },
+            {
+                "Nombre": "Taxis 2222222 S.A.",
+                "Sigla": "T2"
+            },
+            {
+                "Nombre": "Taxis ATH S.A",
+                "Sigla": "Taxis ATH"
+            },
+            {
+                "Nombre": "Taxis a la mano",
+                "Sigla": "SITP"
+            },
+            {
+                "Nombre": "Taxis CAB",
+                "Sigla": "Taxis CAB"
+            },
+            {
+                "Nombre": "Taxis Libres Bogota S.A.",
+                "Sigla": "Taxis Libres S.A."
+            },
+            {
+                "Nombre": "Taxis los Correcaminos S.A.S",
+                "Sigla": "Taxis los Correcaminos S.A.S"
+            },
+            {
+                "Nombre": "Taxis Punto Amarillo",
+                "Sigla": "SITP"
+            },
+            {
+                "Nombre": "Taxis Teleclub S.A.",
+                "Sigla": "Taxis Teleclub S.A."
+            },
+            {
+                "Nombre": "Taxis YA S.A.",
+                "Sigla": "SITP"
+            }
+        ],
+        "Buses": [
+            {
+                "Nombre": "Sistema Integrado de Transporte de Bogota",
+                "Sigla": "SITP"
+            },
+            {
+                "Nombre": "Empresa de Transporte del Tercer Milenio S. A.",
+                "Sigla": "Transmilenio"
+            }
+        ]
+    }
+}

@@ -1,0 +1,315 @@
+[
+    {
+        "id": "12-8",
+        "Ciudad": "Bogota",
+        "Taxis": [
+            {
+                "id": "12-8-0",
+                "Nombre": "AIR Taxis S.A. Air Taxis SA",
+                "Sigla": "AIR Taxos SA"
+            },
+            {
+                "id": "12-8-1",
+                "Nombre": "Alo Taxis S.A.",
+                "Sigla": "Alo Taxis S.A."
+            },
+            {
+                "id": "12-8-2",
+                "Nombre": "Asociación propietarios de Taxis Aeropuerto el Dorado-Astaxdorado",
+                "Sigla": "Astaxdorado"
+            },
+            {
+                "id": "12-8-3",
+                "Nombre": "Car Taxis S.A.-car Taxis",
+                "Sigla": "Car Taxis"
+            },
+            {
+                "id": "12-8-4",
+                "Nombre": "Compañia de Taxis Verdes S.A.-CIA de Taxis Verdes S.A",
+                "Sigla": "CIA de Taxis Verdes S.A. "
+            },
+            {
+                "id": "12-8-5",
+                "Nombre": "Nueva empresa de Taxis S.A.S",
+                "Sigla": "NE"
+            },
+            {
+                "id": "12-8-6",
+                "Nombre": "Radio Taxis Amarillos LTDA",
+                "Sigla": "Radio Taxis Amarillos LTDA"
+            },
+            {
+                "id": "12-8-7",
+                "Nombre": "Sociedad de Taxistas unidos STU S.A",
+                "Sigla": "STU S.A."
+            },
+            {
+                "id": "12-8-8",
+                "Nombre": "Taxis 2222222 S.A.",
+                "Sigla": "T2"
+            },
+            {
+                "id": "12-8-9",
+                "Nombre": "Taxis ATH S.A",
+                "Sigla": "Taxis ATH"
+            },
+            {
+                "id": "12-8-10",
+                "Nombre": "Taxis a la mano",
+                "Sigla": "Taxis a la mano"
+            },
+            {
+                "id": "12-8-11",
+                "Nombre": "Taxis CAB",
+                "Sigla": "Taxis CAB"
+            },
+            {
+                "id": "12-8-12",
+                "Nombre": "Taxis Libres Bogota S.A.",
+                "Sigla": "Taxis Libres S.A."
+            },
+            {
+                "id": "12-8-13",
+                "Nombre": "Taxis los Correcaminos S.A.S",
+                "Sigla": "Taxis los Correcaminos S.A.S"
+            },
+            {
+                "id": "12-8-14",
+                "Nombre": "Taxis Punto Amarillo",
+                "Sigla": "SITP"
+            },
+            {
+                "id": "12-8-15",
+                "Nombre": "Taxis Teleclub S.A.",
+                "Sigla": "Taxis Teleclub S.A."
+            },
+            {
+                "id": "12-8-16",
+                "Nombre": "Taxis YA S.A.",
+                "Sigla": "Taxis YA S.A."
+            }
+        ]
+    },
+    {
+        "id": "1-70",
+        "Ciudad": "Medellin",
+        "Taxis": [
+            {
+                "id": "1-70-0",
+                "Nombre": "Admiautos LTDA",
+                "Sigla": "Admiautos LTDA"
+            },
+            {
+                "id": "1-70-1",
+                "Nombre": "Aerotaxi S.A.",
+                "Sigla": "Aerotaxi S.A."
+            },
+            {
+                "id": "1-70-2",
+                "Nombre": "Compañia Transportadora de Taxi S.A.S",
+                "Sigla": "City Taxi"
+            },
+            {
+                "id": "1-70-3",
+                "Nombre": "Cooperativa de Transporte de Medellin",
+                "Sigla": "Cootransmede"
+            },
+            {
+                "id": "1-70-4",
+                "Nombre": "Cooperativa de Transportadores",
+                "Sigla": "Cootransocial"
+            },
+            {
+                "id": "1-70-5",
+                "Nombre": "Cooperativa de Transportadores San Antonio",
+                "Sigla": "San Antonio"
+            },
+            {
+                "id": "1-70-6",
+                "Nombre": "Flota Bernal S.A",
+                "Sigla": "Flota Bernal S.A"
+            },
+            {
+                "id": "1-70-7",
+                "Nombre": "Hollywood Taxi y CIA LTDA",
+                "Sigla": "Hollywood Taxi y CIA LTDA"
+            },
+            {
+                "id": "1-70-8",
+                "Nombre": "Metromovil S.A.S",
+                "Sigla": "Metromovil S.A.S"
+            },
+            {
+                "id": "1-70-9",
+                "Nombre": "SUAVETAX S.A.",
+                "Sigla": "SUAVETAX S.A."
+            },
+            {
+                "id": "1-70-10",
+                "Nombre": "HERNANDEZ Y CIA TAX LEON XIII S.A.S",
+                "Sigla": "HERNANDEZ Y CIA TAX LEON XIII S.A.S"
+            },
+            {
+                "id": "1-70-11",
+                "Nombre": "TAX ALEMANIA Y CIA S.C.A",
+                "Sigla": "TAX ALEMANIA Y CIA S.C.A"
+            },
+            {
+                "id": "1-70-12",
+                "Nombre": "TAX ALIANZA S.A.S",
+                "Sigla": "TAX ALIANZA S.A.S"
+            },
+            {
+                "id": "1-70-13",
+                "Nombre": "TAX ANDALUZ S.A.S.",
+                "Sigla": "TAX ANDALUZ S.A.S."
+            },
+            {
+                "id": "1-70-14",
+                "Nombre": "TAX BELEN Y CIA S.C.A",
+                "Sigla": "TAX BELEN Y CIA S.C.A"
+            },
+            {
+                "id": "1-70-15",
+                "Nombre": "COOPERATIVA DE TRANSPORTADORES TAX COOPEBOMBAS LTDA",
+                "Sigla": "TAX COOPEBOMBAS LTDA"
+            },
+            {
+                "id": "1-70-16",
+                "Nombre": "EMPRESA DE TAXIS EL REY S.A.S",
+                "Sigla": "EL REY S.A.S"
+            },
+            {
+                "id": "1-70-17",
+                "Nombre": "TAX ESTADIO S.A.S",
+                "Sigla": "TAX ESTADIO S.A.S"
+            },
+            {
+                "id": "1-70-18",
+                "Nombre": "TAX IDEAL LTDA",
+                "Sigla": "TAX IDEAL LTDA"
+            },
+            {
+                "id": "1-70-19",
+                "Nombre": "TAX INDIVIDUAL S.A",
+                "Sigla": "TAX INDIVIDUAL S.A"
+            },
+            {
+                "id": "1-70-20",
+                "Nombre": "TAX POBLADO LTDA",
+                "Sigla": "TAX POBLADO LTDA"
+            },
+            {
+                "id": "1-70-21",
+                "Nombre": "TAX SUPER S.A.",
+                "Sigla": "TAX SUPER S.A."
+            },
+            {
+                "id": "1-70-22",
+                "Nombre": "TAX SUPREMO",
+                "Sigla": "TAX SUPREMO"
+            },
+            {
+                "id": "1-70-23",
+                "Nombre": "TAX TRIUNFO XXI S.A",
+                "Sigla": "TAX TRIUNFO XXI S.A"
+            },
+            {
+                "id": "1-70-24",
+                "Nombre": "EMPRESA TRANSPORTADORA DE TAXIS TAX WFE S.A.",
+                "Sigla": "TAX WFE S.A."
+            },
+            {
+                "id": "1-70-25",
+                "Nombre": "EMPRESA DE TAXIS BELEN S.A.S",
+                "Sigla": "BELEN S.A.S"
+            },
+            {
+                "id": "1-70-26",
+                "Nombre": "TAXIS LIBRES MEDELLIN S.A.",
+                "Sigla": "TAXIS LIBRES MEDELLIN S.A."
+            },
+            {
+                "id": "1-70-27",
+                "Nombre": "TRANSPORTES ESPECIALIZADOS DE LA SALUD S.A",
+                "Sigla": "TRANSESSA"
+            },
+            {
+                "id": "1-70-28",
+                "Nombre": "TAX COLOMBIA ASDOS S.A.S",
+                "Sigla": "ASDOS S.A.S"
+            },
+            {
+                "id": "1-70-29",
+                "Nombre": "COOPERATIVA MULTIACTIVA DE SERVICIOS ASOCIADOS AL TRANSPORTE DE SAN ANTONIO DE PRADO",
+                "Sigla": "COOMUTRASAP"
+            }
+        ]
+    },
+    {
+        "id": "29-9",
+        "Ciudad": "Cali",
+        "Taxis": [
+            {
+                "id": "29-9-0",
+                "Nombre": "Taxis de Oriente S.A.",
+                "Sigla": "Taxis de Oriente S.A."
+            },
+            {
+                "id": "29-9-1",
+                "Nombre": "Taxis Valcali S.A.",
+                "Sigla": "Taxis Valcali S.A."
+            },
+            {
+                "id": "29-9-2",
+                "Nombre": "Taxis del valle S.A.S.",
+                "Sigla": "Taxis del valle S.A.S."
+            },
+            {
+                "id": "29-9-3",
+                "Nombre": "Taxis confiables S.A.S.",
+                "Sigla": "Taxis confiables S.A.S."
+            },
+            {
+                "id": "29-9-4",
+                "Nombre": "Taxis y autos cali S.A.S.",
+                "Sigla": "Taxis y autos cali S.A.S."
+            },
+            {
+                "id": "29-9-5",
+                "Nombre": "Taxis seguros y bienes LTDA",
+                "Sigla": "Taxis seguros y bienes LTDA"
+            },
+            {
+                "id": "29-9-6",
+                "Nombre": "Taxistas profesionales MJ S.A.S.",
+                "Sigla": "Taxistas profesionales MJ S.A.S."
+            },
+            {
+                "id": "29-9-7",
+                "Nombre": "Taxis particulares del norte S.A.S.",
+                "Sigla": "Taxis particulares del norte S.A.S."
+            },
+            {
+                "id": "29-9-8",
+                "Nombre": "Taxis libres",
+                "Sigla": "Taxis libres"
+            },
+            {
+                "id": "29-9-9",
+                "Nombre": "Taxis Services",
+                "Sigla": "Taxis Services"
+            },
+            {
+                "id": "29-9-10",
+                "Nombre": "Taxis unidos cali",
+                "Sigla": "Taxis unidos cali"
+            },
+            {
+                "id": "29-9-11",
+                "Nombre": "Radio Taxis",
+                "Sigla": "Radio Taxis"
+            }
+        ]
+    }
+]

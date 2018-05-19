@@ -1,0 +1,155 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    /*background-color: #f6f3e8;*/
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Set the fixed height of the footer here */
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+.myBrand {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.navMargin {
+    margin-top: 54px;
+    height: 85vh;
+}
+
+.myRow {
+    height: 100%;
+}
+
+.myBtnRow {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.myAddImg {
+    height: 15vw;
+    width: 15vw;
+}
+
+.secondary-list-item {
+    background-color: #e8fcff;
+}
+
+.reportModal {
+    max-width: 80%;
+}
+
+.totalHeight {
+    max-height: 100%;
+}
+
+.btnVer {
+    width: 100%;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.scrollable {
+    position: absolute;
+    top: 53px;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+
+.derScroll {
+    position: absolute;
+    right: 0;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Istok Web', sans-serif;
+}
+
+p {
+    font-family: 'Lora', serif;
+}
+
+/* Image Input */
+
+.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.image-preview-input input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.image-preview-input-title {
+    margin-left: 2px;
+}
+
+.noMarginContainer {
+    margin: 0;
+}
+
+.btnReport {
+    height: 48px;
+    width: 100%;
+}
+
+.hiddenOverflow {
+    overflow: hidden;
+}
+
+@media (min-width: 1800px) {
+    .container {
+        max-width: 80vw !important;
+    }
+}
+
+/* END - Image Input */
+
+/* Custom page CSS
+  -------------------------------------------------- */
+
+/* Not required for template or sticky footer method. */
+
+/* 
+  .container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+  }*/

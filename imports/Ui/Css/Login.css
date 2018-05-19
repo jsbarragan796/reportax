@@ -1,0 +1,38 @@
+body{
+    
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+p{
+    font-size: 20px;
+}
+
+.myContent{
+    background-color: white;    
+}
+
+.myMainTitle{
+    color: white;
+    font-size: 300%;
+}
+
+.mySubTitle{
+    color: white;
+    font-size: 150%;
+}
+
+.loginDiv{
+    width: 100vw;
+    height: 100vh;
+}
+
+.verticalAlignParent{
+    display: table;
+    text-align: center;
+}
+
+.verticalAlignSon{
+    display: table-cell;
+    vertical-align: middle;
+}
