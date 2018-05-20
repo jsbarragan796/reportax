@@ -46,21 +46,6 @@ class ReportForm extends Component {
             Meteor.call("Assets.GetDepartmentsAndCities", (err, data) => {
                 let depData = JSON.parse(data);
 
-                /*depData.forEach((e, i) => {
-                    e.Ciudades = [];
-            
-                    e.ciudades.forEach((f, j) => {
-                        let city = {};
-                        //console.log("Report Form | For? | ", e, f, i, j);
-                        city.id = i + "-" + j;
-                        city.Name = f;
-            
-                        e.Ciudades.push(city);
-                    });
-                });
-            
-                console.log("Report Form | For? | ", depData);*/
-
                 this.setState({
                     Departamentos: depData
                 });
@@ -79,16 +64,6 @@ class ReportForm extends Component {
             });
         }
 
-        //$("#input-b3").fileinput();
-
-        /*$("#input-b3").fileinput({
-            deleteUrl: "/site/file-delete",
-            overwriteInitial: false,
-            maxFileSize: 5,
-            initialCaption: "The Moon and the Earth"
-        });*/
-
-        //$("#input-b3").fileinput({ 'showUpload': false, 'previewFileType': 'any' });
     }
 
     componentDidUpdate() {
@@ -124,9 +99,6 @@ class ReportForm extends Component {
         let target = event.target;
         let option = $("#" + target.id).find("option:selected");
         let id = option[0].value;
-
-        //console.log("ReportForm | handleSelectChange | ", target, option, id);
-
         this.setState({ [target.name]: id });
     }
 
@@ -151,13 +123,12 @@ class ReportForm extends Component {
         if (data && selectedDepartment != "NONE") {
 
             data.forEach(e => {
-                //console.log("FOR | ", e, selectedDepartment);
+
                 if (e.id == selectedDepartment) {
                     dep = e;
                 }
             });
 
-            //console.log("ReportForm | LoadCities | ", data, selectedDepartment, dep);
 
             if (dep) {
                 res = dep.ciudades.map((d, i) => (
@@ -177,29 +148,25 @@ class ReportForm extends Component {
         if (data && SelectedCity != "NONE") {
 
             data.forEach(e => {
-                //console.log("FOR | ", e, selectedDepartment);
+                
                 if (e.id == SelectedCity) {
                     city = e;
                 }
             });
 
-            //console.log("ReportForm | LoadCities | ", data, selectedDepartment, dep);
 
             if (city) {
                 res = city.Taxis.map((d, i) => (
                     <option key={"Company" + i} value={d.id}>{d.Sigla}</option>
                 ));
 
-                /*this.setState({
-                    SelectedCompany: city.id + "-0"
-                });*/
             }
         }
         return res;
     }
 
     addImg(id, e) {
-        //console.log("ReportForm | AddImg");
+       
         let imgs = this.state.Images;
 
         imgs.push({
@@ -210,7 +177,7 @@ class ReportForm extends Component {
 
     ImgLoad(e) {
         let target = e.target;
-        //console.log("ReportForm | ImgLoad | ", target);
+     
         let me = this;
 
         if (target.files) {
@@ -225,7 +192,7 @@ class ReportForm extends Component {
                 var reader = new FileReader();
 
                 reader.onload = function (event) {
-                    //$($.parseHTML('<img>')).attr('src', event.target.result).appendTo("#Gallery");
+                 
                     let count = x;
                     let active = "";
 
@@ -245,9 +212,7 @@ class ReportForm extends Component {
                         )
                     );
 
-                    me.addImg(x, event.target.result);
-
-                    //console.log("Report Form | ImgLoad | ", x, i, count, event);
+                    me.addImg(x, event.target.result);       
                     x += 1;
                 }
 
@@ -288,19 +253,12 @@ class ReportForm extends Component {
         let CompanyInput = this.state.CompanyInput;
         let FinalCompany = {};
 
-        /*
-        let DepOption = $("#DeparmentSelect").find("option:selected");
-        let CityOption = $("#CitySelect").find("option:selected");
 
-        SelectedDepartment = DepOption[0].value;
-        SelectedCity = CityOption[0].value;*/
-
-        //console.log("ReportForm | CreateReport: ", SelectedDepartment, SelectedCity, SelectedCompany, ImgCount, ConductorInput, DenunciaInput, PlacaInput, CompanyCheck, CompanyInput);
         // Capa departamento
         let Department = "";
 
         Departamentos.forEach(e => {
-            //console.log("FOR | ", e, selectedDepartment);
+            
             if (e.id == SelectedDepartment) {
                 Department = e;
             }
@@ -311,7 +269,7 @@ class ReportForm extends Component {
         let City = "";
 
         Department.ciudades.forEach(e => {
-            //console.log("ReportForm | City for: ", e, SelectedCity);
+          
             if (e.id == SelectedCity) {
                 City = e;
             }
@@ -321,7 +279,7 @@ class ReportForm extends Component {
         if (CompanyCheck) {
             FinalCompany = CompanyInput;
         } else {
-            //console.log("Report Company start | ", CompanyInput);
+           
             let CompCity = null;
 
             Companies.forEach(e => {
@@ -332,7 +290,7 @@ class ReportForm extends Component {
 
             if (CompCity) {
                 CompCity.Taxis.forEach(e => {
-                    //console.log("Report company search | ", e.id, SelectedCompany);
+   
                     if (e.id == SelectedCompany) {
                         FinalCompany = e;
                     }
@@ -352,13 +310,7 @@ class ReportForm extends Component {
         let ImgCount = this.state.ImgCount;
         let Images = this.state.Images;
 
-        //console.log("ReportForm | Data: ", Companies, Departamentos);
-        //console.log("ReportForm | Info: ", "SelectedCity: " + SelectedCity, "SelectedCompany: " + SelectedCompany, "SelectedDepartment: " + SelectedDepartment, "ImgCount: " + ImgCount, Images);
-
-        //console.log("ReportForm | Render | ", data);
-
-        //{data ? JSON.stringify(data) : ""}
-
+      
         return (
             <div id="ReportForm" className="container noMarginContainer">
                 <div className="row align-items-center">
@@ -441,8 +393,7 @@ class ReportForm extends Component {
                     </ol>
                 </div>
 
-                {/*<input id="input-b3" name="input-b3[]" type="file" className="file" multiple
-                    data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select {files} for upload..." />*/}
+               
             </div>
         );
     }
